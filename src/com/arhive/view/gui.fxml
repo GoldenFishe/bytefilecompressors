@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<SplitPane dividerPositions="0.5" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="104.0" prefWidth="438.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8">
+  <items>
+    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="148.0" prefWidth="247.0">
+         <children>
+            <Button layoutX="67.0" layoutY="39.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="81.0" text="Choose file" AnchorPane.leftAnchor="67.0" AnchorPane.rightAnchor="67.0" />
+            <Text layoutX="42.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Choose file for compress" AnchorPane.bottomAnchor="71.0" AnchorPane.leftAnchor="42.0" AnchorPane.rightAnchor="42.08984375" />
+         </children></AnchorPane>
+    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="398.0" prefWidth="118.0">
+         <children>
+            <ProgressBar layoutX="4.0" layoutY="43.0" prefHeight="17.0" prefWidth="205.0" progress="0.0" AnchorPane.bottomAnchor="42.0" AnchorPane.leftAnchor="4.0" AnchorPane.rightAnchor="6.0" AnchorPane.topAnchor="43.0" />
+            <Text layoutX="90.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Status" />
+            <Text layoutX="88.0" layoutY="81.0" strokeType="OUTSIDE" strokeWidth="0.0" text="waiting" />
+         </children></AnchorPane>
+  </items>
+</SplitPane>
