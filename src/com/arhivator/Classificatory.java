@@ -37,5 +37,6 @@ public class Classificatory {
     }
     private void replaceSubArray (int start, int end) {
         bytesList.subList(start,end).clear();
+        System.out.println(start + " " + end);
     }
 }
