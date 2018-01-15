@@ -4,14 +4,16 @@ import java.util.ArrayList;
 
 public class Classificatory {
     byte[] bytes;
+    ArrayList<Byte> bytesList = new ArrayList<>();
 
     public Classificatory(byte[] data) {
         this.bytes = data;
+        for(byte bt: bytes) {
+            bytesList.add(bt);
+        }
     }
 
     public void setRange() {
-        ArrayList<Byte[]> range = new ArrayList<>();                  // main range
-        ArrayList<Byte> subRange = new ArrayList<>();                 // subrange in range
         int currentIndex = 0;
         int nextIndex;
 
@@ -20,15 +22,10 @@ public class Classificatory {
             nextIndex = currentIndex + 1;                             // define next index
             if (nextIndex < bytes.length) {                           // check for outrange index in bytes array
                 if (bytes[currentIndex] == bytes[nextIndex]) {
-                    subRange.add(bytes[currentIndex]);
                     while (bytes[currentIndex] == bytes[nextIndex]) { // cycle for find same value
-                        subRange.add(bytes[nextIndex]);
                         nextIndex++;
                     }
-                    Byte[] inRange = new Byte[subRange.size()];       // create array for add in range. size array = size list
-                    subRange.toArray(inRange);                        // make array from list subRange
-                    range.add(inRange);                               // add array in range
-                    subRange.clear();                                 // clear list for next cycle
+                    replaceSubArray(currentIndex,nextIndex);
                     currentIndex = nextIndex;                         // offset for correct next subRange
                 } else {
                     currentIndex++;
@@ -37,6 +34,8 @@ public class Classificatory {
                 currentIndex++;
             }
         }
-        System.out.println("range size: " + range.size());
+    }
+    private void replaceSubArray (int start, int end) {
+        bytesList.subList(start,end).clear();
     }
 }
